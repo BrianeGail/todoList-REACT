@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Form = ({ addTodo, task, setTask }) => {
+const Form = ({ task, setTask, addTodo }) => { // Destructure props
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault(); // Prevent default form submission
+
     if (task) {
-      addTodo(task); // Call addTodo with the current task
-      setTask(''); // Clear the input field after submission
+      addTodo(task); // Add the task
     }
   };
 
