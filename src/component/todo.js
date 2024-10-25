@@ -5,25 +5,29 @@ import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 export const Todo = ({ task, deleteTodo, editTodo, toggleComplete }) => {
   return (
     <div className="Todo">
-      {/* Task text with toggle completion */}
-      <p
-        className={`${task.completed ? "completed" : ""}`}
-        onClick={() => toggleComplete(task.id)} // Toggle task completion
-      >
+      {/* Checkbox to toggle task completion */}
+      <input
+        type="checkbox"
+        checked={task.completed} // Checkbox state is linked to task completion status
+        onChange={() => toggleComplete(task.id)} // Toggle completion on checkbox change
+      />
+
+      {/* Task description */}
+      <p className={task.completed ? "completed" : ""}>
         {task.task}
       </p>
 
+      {/* Edit and delete icons */}
       <div>
-        {/* Edit and delete icons */}
-        <FontAwesomeIcon 
-          className="edit-icon" 
-          icon={faPenToSquare} 
-          onClick={() => editTodo(task.id)} // Edit task
+        <FontAwesomeIcon
+          className="edit-icon"
+          icon={faPenToSquare}
+          onClick={() => editTodo(task.id)}
         />
-        <FontAwesomeIcon 
-          className="delete-icon" 
-          icon={faTrash} 
-          onClick={() => deleteTodo(task.id)} // Delete task
+        <FontAwesomeIcon
+          className="delete-icon"
+          icon={faTrash}
+          onClick={() => deleteTodo(task.id)}
         />
       </div>
     </div>

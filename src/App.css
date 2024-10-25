@@ -89,4 +89,71 @@ h1 {
 .delete-icon {
   cursor: pointer;
 }
+
+.status {
+  font-weight: bold;
+  color: gray;
+}
+
+.completed .status {
+  color: green;
+}
+
+.Todo .status:not(.completed) {
+  color: orange;
+}
+.filter-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #ddd;
+  border-color: #888;
+}
+
+.filter-btn.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+.Todo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.completed {
+  text-decoration: line-through; /* Visually indicate completed tasks */
+  color: #888;
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.edit-icon:hover, .delete-icon:hover {
+  color: #007bff;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2); /* Make the checkbox more visible */
+}
+
+
  
